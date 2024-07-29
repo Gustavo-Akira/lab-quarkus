@@ -11,9 +11,6 @@ public interface CandidateRepository{
         save(Collections.singletonList(candidate));
     }
 
-
-
-
     List<Candidate> find(CandidateQuery query);
     default List<Candidate> findAll(){
         return find(new CandidateQuery.Builder().build());
