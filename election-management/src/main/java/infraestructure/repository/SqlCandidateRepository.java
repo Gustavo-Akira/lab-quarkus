@@ -1,11 +1,14 @@
 package infraestructure.repository;
 
 import domain.Candidate;
+import domain.CandidateQuery;
 import domain.CandidateRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 @ApplicationScoped
 public class SqlCandidateRepository implements CandidateRepository {
 
@@ -15,7 +18,7 @@ public class SqlCandidateRepository implements CandidateRepository {
     }
 
     @Override
-    public List<Candidate> findAll() {
-        return new ArrayList<>();
+    public List<Candidate> find(CandidateQuery query) {
+        return List.of();
     }
 }
