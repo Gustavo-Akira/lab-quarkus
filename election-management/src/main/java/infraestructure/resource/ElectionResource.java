@@ -1,15 +1,14 @@
 package infraestructure.resource;
 
 import api.ElectionApi;
+import api.dto.out.Election;
 import org.jboss.resteasy.reactive.ResponseStatus;
 import org.jboss.resteasy.reactive.RestResponse;
 
 import javax.transaction.Transactional;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -28,5 +27,10 @@ public class ElectionResource {
     @Transactional
     public void submit(){
         api.submit();
+    }
+
+    @GET
+    public List<Election> getAll(){
+        return api.findAll();
     }
 }
