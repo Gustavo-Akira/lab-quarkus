@@ -6,6 +6,7 @@ import domain.annotations.Principal;
 import infraestructure.repository.entities.Election;
 import infraestructure.repository.entities.ElectionCandidate;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.stream.Stream;
 import static java.util.stream.Collectors.groupingBy;
 
 @Principal
+@ApplicationScoped
 public class SQLElectionRepository implements ElectionRepository {
 
     private final EntityManager entityManager;
